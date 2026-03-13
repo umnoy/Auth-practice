@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SecureVault - Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+</head>
+<body>
+  <div class="navbar navbar-space">
+    <span class="logo">SecureVault</span>
+    <div class="user-info">
+      <div class="avatar">{{ username[0].upper() }}</div>
+      <span>{{ username }}</span>
+      <a href="/logout" class="logout">Logout</a>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Welcome back, {{ username }}!</h2>
+
+    <div class="card">
+      <h3>Account Info</h3>
+      <p class="muted">
+        GitHub account: <strong class="text-main">{{ username }}</strong><br>
+        OAuth provider: GitHub<br>
+        Session created: just now
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Vault Notes <span class="badge">{{ notes|length }}</span></h3>
+      {% if notes %}
+        {% for note in notes %}
+        <div class="note-item">{{ note }}</div>
+        {% endfor %}
+      {% else %}
+        <p class="empty-state">No notes yet. Your vault secrets will appear here.</p>
+      {% endif %}
+
+      <hr class="divider">
+      <form method="POST" action="/notes">
+        <textarea name="note" placeholder="Add a secret note..."></textarea>
+        <button type="submit" class="btn-sm">Add Note</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

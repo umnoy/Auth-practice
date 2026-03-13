@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SecureVault - Report a Link</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bot.css') }}">
+</head>
+<body>
+  <div class="card">
+    <h1>Report a Suspicious Link</h1>
+    <p class="subtitle">
+      Found a suspicious URL? Submit it here and our security admin will review it.
+      The admin is currently logged into SecureVault and will click the link to inspect it.
+    </p>
+
+    <form method="POST" action="/submit">
+      <label for="url">Suspicious URL</label>
+      <input type="text" name="url" id="url" placeholder="http://.." autocomplete="off">
+      <button type="submit" class="btn">Submit for Review</button>
+    </form>
+
+    {% if message %}
+    <div class="msg {{ msg_class }}">{{ message }}</div>
+    {% endif %}
+  </div>
+
+  <div class="info">
+    The admin bot will visit the URL you submit, then navigate to
+    SecureVault to save any findings. Only callback links in this format
+    are accepted: <code>http://..</code>
+  </div>
+</body>
+</html>

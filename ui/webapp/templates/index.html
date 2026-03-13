@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SecureVault - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+</head>
+<body>
+  <div class="navbar">
+    <span class="logo">SecureVault</span>
+  </div>
+  <div class="container center">
+    <div class="vault-icon">Vault</div>
+    <h1>Your Personal Vault</h1>
+    <p class="subtitle">
+      Store your most sensitive secrets safely.<br>
+      Login with your GitHub account to access your vault.
+    </p>
+    <a href="/login" class="btn btn-github">Login with GitHub</a>
+
+    <div class="info-box">
+      <h3>How it works</h3>
+      <p>We use GitHub OAuth2 to authenticate you. After login, your personal vault will be created where you can store sensitive notes and retrieve your personal flag.</p>
+    </div>
+  </div>
+</body>
+</html>

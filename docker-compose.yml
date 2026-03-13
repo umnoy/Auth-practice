@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  oauth-provider:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    command: python oauth_provider.py
+    ports:
+      - "5001:5001"
+    environment:
+      FLASK_ENV: production
+    networks:
+      - lab
+  webapp:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    command: python app.py
+    ports:
+      - "5000:5000"
+    environment:
+      SECRET_KEY: "ctf-secret-key" #обзяательно поменять потом
+      OAUTH_PROVIDER_URL: "http://oauth-provider:5001"
+      OAUTH_PROVIDER_BROWSER_URL: "http://localhost:5001"
+    depends_on:
+      - oauth-provider
+    networks:
+      - lab
+  bot:
+    build:
+      context: .
+      dockerfile: bot/Dockerfile
+    command: python bot.py
+    ports:
+      - "5002:5002"
+    environment:
+      FLAG: "practice{csrf_l0gin_y0u_auth3d_as_m3}"
+      WEBAPP_INTERNAL_URL: "http://webapp:5000"
+    depends_on:
+      - oauth-provider
+      - webapp
+    networks:
+      - lab
+
+networks:
+  lab:
+    driver: bridge

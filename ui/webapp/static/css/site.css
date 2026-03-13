@@ -1,0 +1,37 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Courier New', monospace; background: #0d1117; color: #c9d1d9; min-height: 100vh; }
+.navbar { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 32px; display: flex; align-items: center; gap: 16px; }
+.navbar-space { justify-content: space-between; }
+.logo { font-size: 20px; font-weight: bold; color: #58a6ff; letter-spacing: 2px; }
+.container { max-width: 800px; margin: 48px auto; padding: 0 24px; }
+.center { margin: 80px auto; text-align: center; }
+h1 { font-size: 48px; color: #f0f6fc; margin-bottom: 16px; }
+h2 { color: #f0f6fc; margin-bottom: 24px; font-size: 28px; }
+.subtitle { color: #8b949e; font-size: 18px; margin-bottom: 48px; line-height: 1.6; }
+.btn { display: inline-block; padding: 14px 32px; background: #238636; color: #fff; text-decoration: none; border-radius: 6px; font-size: 16px; font-weight: bold; border: 1px solid #2ea043; transition: background 0.2s; cursor: pointer; }
+.btn:hover { background: #2ea043; }
+.btn-github { background: #21262d; border-color: #30363d; }
+.btn-github:hover { background: #30363d; }
+.vault-icon { font-size: 36px; margin-bottom: 32px; }
+.info-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; margin-top: 48px; text-align: left; }
+.info-box h3 { color: #58a6ff; margin-bottom: 12px; }
+.info-box p { color: #8b949e; line-height: 1.6; font-size: 14px; }
+.user-info { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 32px; height: 32px; border-radius: 50%; background: #238636; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+.card h3 { color: #58a6ff; margin-bottom: 12px; font-size: 18px; }
+.logout { color: #f85149; text-decoration: none; font-size: 14px; }
+.logout:hover { text-decoration: underline; }
+.badge { display: inline-block; padding: 2px 8px; background: #1f6feb; color: #fff; border-radius: 12px; font-size: 12px; margin-left: 8px; }
+.note-item { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 12px; margin-bottom: 8px; font-size: 14px; color: #c9d1d9; word-break: break-all; }
+.empty-state { color: #8b949e; font-size: 14px; font-style: italic; }
+textarea { width: 100%; padding: 8px 12px; font-size: 14px; color: #c9d1d9; background: #0d1117; border: 1px solid #30363d; border-radius: 6px; resize: vertical; min-height: 60px; font-family: monospace; margin-bottom: 12px; }
+.btn-sm { padding: 6px 16px; font-size: 13px; color: #fff; background: #238636; border: 1px solid #2ea043; border-radius: 6px; cursor: pointer; }
+.btn-sm:hover { background: #2ea043; }
+.divider { border: none; border-top: 1px solid #30363d; margin: 16px 0; }
+.muted { color: #8b949e; font-size: 14px; }
+.text-main { color: #c9d1d9; }
+.error-page { display: flex; align-items: center; justify-content: center; }
+.box { background: #161b22; border: 1px solid #f85149; border-radius: 8px; padding: 32px; max-width: 500px; }
+.box h2 { color: #f85149; margin-bottom: 16px; font-size: 28px; }
+.box a { color: #58a6ff; }
