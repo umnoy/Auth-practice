@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account Created</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/oauth.css') }}">
+</head>
+<body>
+  <div class="logo">🐙</div>
+
+  <div class="login-card" style="text-align:center;">
+    <h1>Account created!</h1>
+    <p style="margin:16px 0;color:#8b949e;">You can now sign in with your new credentials.</p>
+    <a href="{{ next_url }}" class="btn-login" style="display:block;text-decoration:none;text-align:center;">Sign in</a>
+  </div>
+</body>
+</html>

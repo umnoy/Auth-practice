@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Account</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/oauth.css') }}">
+</head>
+<body>
+  <div class="logo">🐙</div>
+
+  <div class="login-card">
+    <h1>Create your account</h1>
+
+    <div class="mock-badge">Mock OAuth Provider (CTF Lab)</div>
+
+    {% if error %}
+    <div class="error-msg">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/register">
+      <input type="hidden" name="client_id" value="{{ client_id }}">
+      <input type="hidden" name="redirect_uri" value="{{ redirect_uri }}">
+      <input type="hidden" name="scope" value="{{ scope }}">
+
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" autocomplete="username"
+             pattern="[a-zA-Z0-9_]{3,30}" maxlength="30"
+             title="3-30 characters: letters, digits, underscore" required autofocus>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" autocomplete="new-password"
+             minlength="6" required>
+
+      <label for="password_confirm">Confirm password</label>
+      <input type="password" name="password_confirm" id="password_confirm"
+             autocomplete="new-password" minlength="6" required>
+
+      <button type="submit" class="btn-login">Create account</button>
+    </form>
+  </div>
+
+  <div class="app-info">
+    Already have an account? <a href="/authorize?client_id={{ client_id }}&redirect_uri={{ redirect_uri }}&scope={{ scope }}" style="color:#58a6ff;">Sign in</a>
+  </div>
+</body>
+</html>
